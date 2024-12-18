@@ -2,14 +2,18 @@
     "version": 2,
     "builds": [
       {
-        "src": "Backend/MERN_Netfy/index.js",
+        "src": "BackEnd/MERN_Netfy/index.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
+        "src": "/api/(.*)",
+        "dest": "/BackEnd/MERN_Netfy/index.js"
+      },
+      {
         "src": "/(.*)",
-        "dest": "Backend/MERN_Netfy/index.js"
+        "dest": "/FrontEnd/dist/$1"
       }
     ]
   }
