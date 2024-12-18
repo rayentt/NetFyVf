@@ -121,6 +121,12 @@ dotenv.config();
 import compression from 'compression';
 app.use(compression());
 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+
 
 
 // Initialize Express app
